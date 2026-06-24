@@ -43,7 +43,8 @@
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc",
-    "gen": "bun cli/cli.ts"
+    "gen": "bun cli/cli.ts",
+    "gen:hormonas": "tsx cli/generate-custom.ts"
   },
   "sideEffects": [
     "*.css"
