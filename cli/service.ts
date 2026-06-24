@@ -80,19 +80,16 @@ export const generateAiImage = async ({
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "dall-e-3",
+        model: "gpt-image-1",
         prompt,
-        size: `${IMAGE_WIDTH}x${IMAGE_HEIGHT}`,
-        response_format: "b64_json",
+        size: "1024x1536",
       }),
     });
 
     if (res.ok) {
       const data = await res.json();
       const buffer = Buffer.from(data.data[0].b64_json, "base64");
-      const uint8Array = new Uint8Array(buffer);
-
-      saveUint8ArrayToPng(uint8Array, path);
+      saveUint8ArrayToPng(new Uint8Array(buffer), path);
       return;
     } else {
       lastError = new Error(
