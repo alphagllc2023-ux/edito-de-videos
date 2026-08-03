@@ -9,7 +9,7 @@ import {
   openaiStructuredCompletion,
   setApiKey,
 } from "./service";
-import { ContentItemWithDetails, StoryMetadataWithDetails, StoryWithImages } from "../src/lib/types";
+import { StoryMetadataWithDetails, StoryWithImages } from "../src/lib/types";
 import { v4 as uuidv4 } from "uuid";
 import * as fs from "fs";
 import * as path from "path";
